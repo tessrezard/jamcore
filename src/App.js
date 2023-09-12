@@ -14,7 +14,6 @@ function App() {
       <main>
         <SearchBar />
         <MakingPlaylist className='makingPlaylist'/>
-
       </main>
     </div>
   );
