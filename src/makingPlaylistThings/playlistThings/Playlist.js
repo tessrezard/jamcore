@@ -6,9 +6,9 @@ import { generateId } from '../../utilities';
 
 function Playlist ({ tracklist, removeTrackfromPlaylist }) {
 
-  const handleRemoveTrack = (track) => {
+  const handleRemoveTrack = (trackID) => {
     // Call the addTrackToPlaylist function to add the track to the playlist
-    removeTrackfromPlaylist(track);
+    removeTrackfromPlaylist(trackID);
   };
 
 
@@ -17,14 +17,13 @@ function Playlist ({ tracklist, removeTrackfromPlaylist }) {
             <h1>Playlist</h1>
             <ol>
             {tracklist.map((song) => {
-                                return (
-                                    <li key={generateId()}>
-                                        <Track title={song.title} artist={song.artist} key={song.id}/>
-                                        <button onClick={() => handleRemoveTrack(song.id)}>Remove song</button>
-
-                                    </li >
+                    return (
+                             <li key={generateId()}>
+                                    <Track title={song.title} artist={song.artist} key={song.id}/>
+                                    <button onClick={() => handleRemoveTrack(song)}>Remove song</button>
+                            </li >
                                     
-                                );
+                            );
                             })
                     }
             </ol>
