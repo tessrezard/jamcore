@@ -1,0 +1,6 @@
+.trackContainer {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: beige;
+    width: 25vw;
+}

@@ -4,7 +4,6 @@ import Track from '../trackThings/Track';
 import { generateId } from '../../utilities';
 
 
-
 function SearchResults ({ addTrackToPlaylist }) {
 
     const [searchedSongs, setSearchedSongs] = useState([
@@ -33,7 +32,7 @@ function SearchResults ({ addTrackToPlaylist }) {
                                     <li key={generateId()}>
                                         <Track title={song.title} artist={song.artist} key={song.id}/>
                                         {/* <AddTrackBtn key={generateId} id={song.id} addTrackToPlaylist={addTrackToPlaylist} /> */}
-                                        <button onClick={() => handleAddTrack(song)}>Add song</button>
+                                        <button className='trackBtn addBtn' onClick={() => handleAddTrack(song)}> + </button>
                                     </li >
                                     
                                 );

@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Track.module.css'
 
 function Track (prop){
     return(
-      <div>
+      <div className={styles.trackContainer}>
           <h3>
             {prop.title} 
           </h3>

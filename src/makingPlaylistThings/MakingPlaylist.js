@@ -18,7 +18,6 @@ function MakingPlaylist () {
       ))
     }
 
-      console.log(tracklist);
 
     return(
         <div className='makingPlaylist'>

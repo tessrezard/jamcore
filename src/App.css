@@ -2,6 +2,9 @@
   box-sizing: border-box;
   text-align: center;
 }
+header {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 
 
@@ -21,3 +24,20 @@
   justify-content: space-evenly;
 }
 
+li {
+  display: flex;
+  flex-flow: row ;
+  margin: 1em;
+}
+
+.trackBtn {
+  border: none;
+  background-color: bisque;
+  padding: 3vw;
+  font-size: 30px;
+}
+
+
+.addBtn{}
+
+.rmvBtn{}
