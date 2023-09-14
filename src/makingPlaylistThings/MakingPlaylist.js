@@ -3,11 +3,11 @@ import SearchResults from './searchResultsThings/SearchResults';
 import Playlist from './playlistThings/Playlist';
 import { generateId } from '../utilities';
 
-function MakingPlaylist () {
-    const [tracklist, setTracklist] = useState([]);
+function MakingPlaylist ({search}) {
+  const [tracklist, setTracklist] = useState([]);
+
 
     const addTrackToPlaylist = (track) => {
-        // Update the tracklist state when a track is added
         const newTrack = { ...track, uniqueId: generateId() };
         setTracklist([...tracklist, newTrack]);
       };

@@ -8,6 +8,7 @@ import {CLIENT_ID, CLIENT_SECRET} from './APIs/secret'
 function App() {
 
   const [search, setSearch] = useState('');
+  const [searchResponse, setSearchResponse] = useState([]);
 
 
   const REDIRECT_URI = 'http://localhost:3000';
@@ -29,12 +30,11 @@ function App() {
 
     if (!token && hash) {
       token = hash.substring(1).split('&').find(element => element.startsWith('access_token')).split('=')[1];
-      console.log(token);
       window.location.hash = '';
       window.localStorage.setItem('token', token);
-      setToken(token);
-      setTokenExpiresAt(expirationTime);
     }
+    setToken(token);
+    setTokenExpiresAt(expirationTime);
 
     const checkTokenExpiration = () => {
       const currentTime = Date.now();
@@ -55,20 +55,19 @@ function App() {
 
   }, [])
 
-  console.log(window.localStorage);
 
   return (
     <div className="App">
       <header className="App-header">
         <Header />
-        {!token ? 
+        {!token || !window.localStorage.getItem('token', token) ? 
             <a title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >Login to Spotify</a>
             :
             <button onClick={logout} >logout</button>
         }
            </header>
         <main>
-        <SearchBar setSearch={setSearch} search={search} />
+        <SearchBar setSearch={setSearch} search={search} token={token} setSearchResponse={setSearchResponse} />
         <MakingPlaylist className='makingPlaylist' search={search} />
       </main>
     </div>
