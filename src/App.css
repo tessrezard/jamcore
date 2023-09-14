@@ -2,14 +2,16 @@
   box-sizing: border-box;
   text-align: center;
 }
-header {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+h1{
+  font-family: Arial, Helvetica, sans-serif
 }
 
 
 
 .App-header {
-  background-color: #62769d;
+  text-shadow: 1px 1px 0px rgb(182, 107, 119);
+  color: rgb(52, 79, 57);
+  background-color: #fed5ca;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -21,11 +23,29 @@ header {
 .makingPlaylist {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.searchResultsContainer{
+  width: 50vw;
+}
+.playlistContainer{
+  width: 50vw;
+  /* display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center; */
+
+}
+
+.tracklist {
+  margin: auto;
 }
 
 li {
   display: flex;
+  justify-content: center;
+
   flex-flow: row ;
   margin: 1em;
 }

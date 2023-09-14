@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Playlist.module.css';
 import Track from '../trackThings/Track';
 import { generateId } from '../../utilities';
@@ -6,22 +6,30 @@ import { generateId } from '../../utilities';
 
 function Playlist ({ tracklist, removeTrackfromPlaylist }) {
 
-  const handleRemoveTrack = (trackID) => {
+    const [playlistName, setPlaylistName] = useState('');
+
+    const URIs = [];
+     for (let i = 0; i < tracklist.length; i++){
+        URIs.push(tracklist[i].uri);
+     }
+
+
+    const handleRemoveTrack = (trackID) => {
     // Call the addTrackToPlaylist function to add the track to the playlist
     removeTrackfromPlaylist(trackID);
   };
 
 
     return(
-        <div >
+        <div className='playlistContainer'>
             <h1>Playlist</h1>
-            <input type='text' placeholder='Name your playlist' ></input>
-            <ol>
+            <input type='text'  placeholder='Name your playlist'  value={playlistName} onChange={ (e)=> setPlaylistName(e.target.value) } ></input>
+            <ol className='tracklist'>
             {tracklist.map((song) => {
                     return (
-                             <li key={generateId()}>
-                                    <Track title={song.title} artist={song.artist} key={song.id}/>
-                                    <button className='trackBtn rmvBtn' onClick={() => handleRemoveTrack(song)}> - </button>
+                        <li key={generateId()}>
+                            <Track name={song.name} artist={song.artist} key={song.id} album={song.album} />
+                            <button className='trackBtn' onClick={ () => handleRemoveTrack(song) }> - </button>
                             </li >
                             );
                             })

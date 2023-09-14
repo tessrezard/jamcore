@@ -7,12 +7,9 @@ import { generateId } from '../../utilities';
 function SearchResults ({ addTrackToPlaylist }) {
 
     const [searchedSongs, setSearchedSongs] = useState([
-        {title : 'Song1', artist: 'artist1', id: '1234b'}, 
-        {title : 'Song2', artist: 'artist2', id: '1234a'}, 
-        {title : 'Song3', artist: 'artist3', id: '1234c'}, 
-        {title : 'Song4', artist: 'artist4', id: '1234d'}, 
-        {title : 'Song5', artist: 'artist5', id: '1234e'}, 
-        {title : 'Song5', artist: 'artist5', id: '1234f'}, 
+        {name : 'Song2', artist: 'artist2', album: 'album 1', id: '1234a', uri: '12334'}, 
+        {name : 'Song1', artist: 'artist1', album: 'album 1', id: '1234b', uri: '12335'}, 
+        {name : 'Song3', artist: 'artist3', album: 'album 1', id: '1234c', uri: '12336'}, 
     ]);
 
 
@@ -23,16 +20,15 @@ function SearchResults ({ addTrackToPlaylist }) {
   };
 
     return(
-        <div>
+        <div className='searchResultsContainer'>
             <h1>Search Results</h1>
             <ul>
                 <div>
                     {searchedSongs.map((song) => {
                                 return (
                                     <li key={generateId()}>
-                                        <Track title={song.title} artist={song.artist} key={song.id}/>
-                                        {/* <AddTrackBtn key={generateId} id={song.id} addTrackToPlaylist={addTrackToPlaylist} /> */}
-                                        <button className='trackBtn addBtn' onClick={() => handleAddTrack(song)}> + </button>
+                                        <Track name={song.name} artist={song.artist} album={song.album} key={song.id}/>
+                                        <button className='trackBtn' onClick={() => handleAddTrack(song)}> + </button>
                                     </li >
                                     
                                 );
