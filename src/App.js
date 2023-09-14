@@ -3,14 +3,13 @@ import React, {useState, useEffect} from 'react';
 import Header from './headerThings/Header';
 import SearchBar from './searchBarThings/SearchBar';
 import MakingPlaylist from './makingPlaylistThings/MakingPlaylist';
-
+import {CLIENT_ID, CLIENT_SECRET} from './APIs/secret'
 
 function App() {
 
   const [search, setSearch] = useState('');
 
-  const CLIENT_ID = '1dd99b44b5114c6ea2a3f4792ebb4c11'; 
-  const CLIENT_SECRET = 'cab3b304acf64b249a46dc36f9f8fec8'; 
+
   const REDIRECT_URI = 'http://localhost:3000';
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
   const RESPONSE_TYPE = 'token';
