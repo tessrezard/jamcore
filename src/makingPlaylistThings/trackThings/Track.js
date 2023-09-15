@@ -5,11 +5,12 @@ function Track (prop){
     return(
       <div className={styles.trackContainer}>
           <h3>
-            {prop.title} 
+            {prop.name} 
           </h3>
           <h4>
             {prop.artist}
           </h4>
+          <img src={prop.items}/>
       </div>
     );
   }

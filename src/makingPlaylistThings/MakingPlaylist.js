@@ -3,9 +3,10 @@ import SearchResults from './searchResultsThings/SearchResults';
 import Playlist from './playlistThings/Playlist';
 import { generateId } from '../utilities';
 
-function MakingPlaylist ({search}) {
+function MakingPlaylist ({search, searchResponse}) {
   const [tracklist, setTracklist] = useState([]);
 
+  console.log('searchResponse', searchResponse);
 
     const addTrackToPlaylist = (track) => {
         const newTrack = { ...track, uniqueId: generateId() };
@@ -21,7 +22,7 @@ function MakingPlaylist ({search}) {
 
     return(
         <div className='makingPlaylist'>
-          <SearchResults addTrackToPlaylist={addTrackToPlaylist} />
+          <SearchResults addTrackToPlaylist={addTrackToPlaylist} searchResponse={searchResponse} />
           <Playlist tracklist={tracklist} removeTrackfromPlaylist={removeTrackfromPlaylist} />
         </div>
     )
