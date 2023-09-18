@@ -23,6 +23,13 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
         } else {
             setSearch(e.target.value);
         }
+        setSearch(e.target.value);
+    }
+
+    function handleKeyDown (event) {
+        if (event.key === 'Enter'){
+            setSearch(event.target.value);
+        }
     }
 
 
@@ -39,11 +46,10 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
                 type: `${typeOfSearch}`,
                 limit: 15,
             }
-        } )
-        ;
+        });
 
         const responseItems = [response.data[typeKey].items];
-        // console.log(`responseItems ${typeOfSearch}` , responseItems);
+        console.log(`responseItems ${typeOfSearch}` , responseItems);
 
         const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri' ];
 
@@ -54,6 +60,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
                     if (item.hasOwnProperty(key)) {
                         const justArtistsNames = item[key].map(artist => artist['name']);
                         newItem['artists'] = justArtistsNames;
+
                     }
                 } else {
                     if (item.hasOwnProperty(key)) {
@@ -79,7 +86,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
                     <option value="artist">Artist</option>
                     <option value="album">Album</option>
                 </select> */}
-                <input required className={styles.searchBar} type='text' value={search} onChange={handleChange} />
+                <input required className={styles.searchBar} type='text' value={search} onChange={handleChange} onKeyDown={handleKeyDown}/>
                 <input className={styles.submitButton} type='submit' value='Search'/>
             </form>
         </div>

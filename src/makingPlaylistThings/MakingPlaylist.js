@@ -4,7 +4,7 @@ import Playlist from './playlistThings/Playlist';
 import { generateId } from '../utilities';
 import styles from './MakingPlaylist.module.css';
 
-function MakingPlaylist ({search, searchResponse}) {
+function MakingPlaylist ({search, searchResponse, token}) {
   const [tracklist, setTracklist] = useState([]);
 
 
@@ -22,7 +22,7 @@ function MakingPlaylist ({search, searchResponse}) {
     return(
         <div className={styles.makingPlaylistContainer} >
           <SearchResults addTrackToPlaylist={addTrackToPlaylist} searchResponse={searchResponse} />
-          <Playlist tracklist={tracklist} removeTrackfromPlaylist={removeTrackfromPlaylist} />
+          <Playlist token={token} tracklist={tracklist} removeTrackfromPlaylist={removeTrackfromPlaylist} />
         </div>
     )
 };

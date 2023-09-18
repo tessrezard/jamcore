@@ -17,41 +17,43 @@ function App() {
   let timeRemaining = 0;
 
   const logout = () => {
-    window.localStorage.removeItem('token', token);
+    window.localStorage.removeItem('token');
     setToken('');
     timeRemaining = 0;
   }
 
 
   useEffect(()=> {
-
     const hash = window.location.hash;
     let token = window.localStorage.getItem('token');
+    const expirationTime = Date.now() + 3600 * 1000;
 
 
-    if (!token && hash) {
+    const checkTokenExpiration = () => {
+      const currentTime = Date.now();
+      timeRemaining = expirationTime - currentTime;
+      console.log(timeRemaining);
+      if (timeRemaining < 0 || !window.localStorage.getItem('token')){
+        logout();
+      }
+    }
+
+    if (!token && hash ) {
       token = hash.substring(1).split('&').find(element => element.startsWith('access_token')).split('=')[1];
       window.location.hash = '';
       window.localStorage.setItem('token', token);
       setToken(token);
     } 
 
-    const expirationTime = Date.now() + 3600 * 1000;
+
+
     
-    const checkTokenExpiration = () => {
-      const currentTime = Date.now();
-      timeRemaining = expirationTime - currentTime;
-      
-      if (timeRemaining < 0 || !window.localStorage.getItem('token', token)){
-        logout();
-      }
-    }
-    
+    console.log('token', token);
+    console.log('window.localStorage.getItem', window.localStorage.getItem('token', token))
 
     // Check token expiration every minute (adjust this interval as needed)
     const tokenCheckInterval = setInterval(checkTokenExpiration, 10000);
-
-  
+    
     return () => {
       clearInterval(tokenCheckInterval);
     };
@@ -64,9 +66,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header className="App-header"/>
-        {!token || !window.localStorage.getItem('token', token) ? 
+        {!token || !window.localStorage.getItem('token', token) ?
           <div className='spotifytBtn'>
-              <a  title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >
+              <a   title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >
                 Log into Spotify
               </a>
           </div>
@@ -76,7 +78,7 @@ function App() {
            </header>
         <main>
         <SearchBar setSearch={setSearch} search={search} token={token} setSearchResponse={setSearchResponse} />
-        <MakingPlaylist  search={search} searchResponse={searchResponse} />
+        <MakingPlaylist token={token} search={search} searchResponse={searchResponse} />
       </main>
     </div>
   );
