@@ -58,6 +58,7 @@ function App() {
 
   }, [])
 
+  console.log('searchResponse in app', searchResponse);
 
   return (
     <div className="App">

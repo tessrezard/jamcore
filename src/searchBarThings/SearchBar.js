@@ -10,12 +10,12 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
     const [typeOfSearch, setTypeOfSearch] = useState('track');
     let SEARCHVALUE;
 
-
-    function handleTypeSelection() {
-        SEARCHVALUE = (document.getElementById("typeOfSearch").value);
-        setTypeOfSearch(SEARCHVALUE);
-        setTypeKey(`${SEARCHVALUE}s`);
-    }
+//--------------Use if we want to enable type selection
+    // function handleTypeSelection() {
+    //     SEARCHVALUE = (document.getElementById("typeOfSearch").value);
+    //     setTypeOfSearch(SEARCHVALUE);
+    //     setTypeKey(`${SEARCHVALUE}s`);
+    // }
 
     function handleChange (e) {
         if (!token){
@@ -28,9 +28,6 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
 
     const searchSpotify = async (e) => {
 
-        // console.log('in search Spotify - search: ', search);
-        // console.log('in search Spotify - typeOfSearch: ', typeOfSearch);
-        // console.log('in search Spotify - typeKey: ', typeKey);
         e.preventDefault();
 
         const response = await axios.get('https://api.spotify.com/v1/search?' , {
@@ -40,22 +37,17 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
             params: {
                 q: `${search}`,
                 type: `${typeOfSearch}`,
-                limit: 10,
+                limit: 15,
             }
         } )
         ;
 
         const responseItems = [response.data[typeKey].items];
-
         // console.log(`responseItems ${typeOfSearch}` , responseItems);
-        // console.log('responseItems[0]', responseItems[0]);
-
-
-
 
         const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri' ];
 
-        const cleanerData = responseItems[0].map(item => {
+        const cleanData = responseItems[0].map(item => {
             const newItem = {}; 
             keysToCopy.forEach((key) => {
                 if (key === 'artists'){
@@ -72,13 +64,10 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
             });
             return newItem;
         })
-        console.log('cleanerData', cleanerData);
 
+         setSearchResponse(cleanData);
 
-
-
-        }
-
+    }
 
 
     return(

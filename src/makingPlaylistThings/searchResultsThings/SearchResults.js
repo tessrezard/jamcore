@@ -23,7 +23,7 @@ function SearchResults ({ addTrackToPlaylist, searchResponse }) {
             <h1>Search Results</h1>
             <ul>
                 <div>
-                    {searchedSongs.map((song) => {
+                    {searchResponse.map((song) => {
                         return (
                             <li key={generateId()}>
                                 <Track name={song.name} artist={song.artist} album={song.album} key={song.id}/>
