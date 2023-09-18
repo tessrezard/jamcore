@@ -1,0 +1,13 @@
+.playlistContainer{
+    width: 50vw;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tracklist {
+    /* margin: auto; */
+    height: fit-content;
+
+  }

@@ -10,10 +10,19 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
     const [typeOfSearch, setTypeOfSearch] = useState('track');
     let SEARCHVALUE;
 
+
     function handleTypeSelection() {
         SEARCHVALUE = (document.getElementById("typeOfSearch").value);
         setTypeOfSearch(SEARCHVALUE);
         setTypeKey(`${SEARCHVALUE}s`);
+    }
+
+    function handleChange (e) {
+        if (!token){
+            alert('You must be logged in to search! thank youuu x')
+        } else {
+            setSearch(e.target.value);
+        }
     }
 
 
@@ -36,21 +45,37 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
         } )
         ;
 
-        // console.log('resonse', response);
-        // console.log('response.data', response.data)
         const responseItems = [response.data[typeKey].items];
-        console.log(`responseItems ${typeOfSearch}` , responseItems);
 
-        console.log(response.data[typeKey].items[9].artists[0].name);
-        console.log(response.data[typeKey].items[9].artists.length);
+        // console.log(`responseItems ${typeOfSearch}` , responseItems);
+        // console.log('responseItems[0]', responseItems[0]);
 
-        // const searchedTrackData = responseItems.map( (item) => {
-        //     for (let i = 0; i < item.artists.length(); i++){
-        //         console.log(item.artists[i]);
-        //     }
-        // });
 
-        // console.log(searchedTrackData);
+
+
+        const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri' ];
+
+        const cleanerData = responseItems[0].map(item => {
+            const newItem = {}; 
+            keysToCopy.forEach((key) => {
+                if (key === 'artists'){
+                    if (item.hasOwnProperty(key)) {
+                        const justArtistsNames = item[key].map(artist => artist['name']);
+                        newItem['artists'] = justArtistsNames;
+                    }
+                } else {
+                    if (item.hasOwnProperty(key)) {
+                        newItem[key] = item[key];
+                    }
+                 }
+                
+            });
+            return newItem;
+        })
+        console.log('cleanerData', cleanerData);
+
+
+
 
         }
 
@@ -65,7 +90,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
                     <option value="artist">Artist</option>
                     <option value="album">Album</option>
                 </select> */}
-                <input required className={styles.searchBar} type='text' value={search} onChange={(e) => setSearch(e.target.value)} />
+                <input required className={styles.searchBar} type='text' value={search} onChange={handleChange} />
                 <input className={styles.submitButton} type='submit' value='Search'/>
             </form>
         </div>

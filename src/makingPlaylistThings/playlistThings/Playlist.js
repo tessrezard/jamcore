@@ -21,10 +21,10 @@ function Playlist ({ tracklist, removeTrackfromPlaylist }) {
 
 
     return(
-        <div className='playlistContainer'>
+        <div className={styles.playlistContainer}>
             <h1>Playlist</h1>
             <input type='text'  placeholder='Name your playlist'  value={playlistName} onChange={ (e)=> setPlaylistName(e.target.value) } ></input>
-            <ol className='tracklist'>
+            <ol className={styles.tracklist}>
             {tracklist.map((song) => {
                     return (
                         <li key={generateId()}>

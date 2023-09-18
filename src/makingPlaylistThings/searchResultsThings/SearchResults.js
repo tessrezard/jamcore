@@ -19,7 +19,7 @@ function SearchResults ({ addTrackToPlaylist, searchResponse }) {
   };
 
     return(
-        <div className='searchResultsContainer'>
+        <div className={styles.searchResultsContainer}>
             <h1>Search Results</h1>
             <ul>
                 <div>
