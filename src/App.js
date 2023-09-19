@@ -61,6 +61,7 @@ function App() {
   }, [])
 
   console.log('searchResponse in app', searchResponse);
+  
 
   return (
     <div className="App">
@@ -68,7 +69,7 @@ function App() {
         <Header className="App-header"/>
         {!token || !window.localStorage.getItem('token', token) ?
           <div className='spotifytBtn'>
-              <a   title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >
+              <a   title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
                 Log into Spotify
               </a>
           </div>

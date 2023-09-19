@@ -6,15 +6,16 @@ import axios from 'axios';
 
 
 
-function Playlist ({ tracklist, removeTrackfromPlaylist, token }) {
+function Playlist ({ tracklist, removeTrackfromPlaylist, token, searchResponse }) {
 
-    const [playlistName, setPlaylistName] = useState('');
+    const [playlistName, setPlaylistName] = useState('Your Jamcore Playlist');
 
     const URIs = [];
      for (let i = 0; i < tracklist.length; i++){
-        URIs.push(tracklist[i].uri);
+        URIs.push(searchResponse[i].uri);
      }
 
+     console.log('uris: ', URIs);
 
     const handleRemoveTrack = (trackID) => {
     // Call the addTrackToPlaylist function to add the track to the playlist
@@ -32,27 +33,67 @@ function Playlist ({ tracklist, removeTrackfromPlaylist, token }) {
             Authorization: `Bearer ${token}`,
         },
     });
-    console.log(getUser.data.id);
+    console.log('getUser.data', getUser.data);
+    console.log('getUser.data.id', getUser.data.id);
+    
+    console.log('uris', URIs);
 
-    const createPlaylist = await axios.post(`https://api.spotify.com/v1/users/${getUser.data.id}/playlists` , {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-        data: {
-            "name": "NEW API PLAYLIST",
-            "description": "New API playlist description",
-            "public": false,
-        }
-    });
-    console.log('createPlaylist', createPlaylist);
+    let createPlaylist = {};
+
+
+
+    try {
+        createPlaylist = await axios({
+            method: 'post', 
+            url: `https://api.spotify.com/v1/users/${getUser.data.id}/playlists`,
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type' : 'application/json'
+            },
+            data: {
+                "name": `${playlistName}`,
+                "description": "New API playlist description",
+                "public": false,
+            }
+        });
+
+    } catch(e) {
+        console.log('createPlaylist error', e);
     }
 
+    console.log('createPlaylist', createPlaylist);
+    console.log('createPlaylist.data.id', createPlaylist.data.id);
+    const playlist_id = createPlaylist.data.id;
+    console.log('playlist_id', playlist_id);
+
+
+
+    try {
+        const addItemsToPlaylist = await axios({
+            method: 'post', 
+            url: `https://api.spotify.com/v1/playlists/${playlist_id}/tracks`,
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type' : 'application/json'
+            },
+            data: {
+                "uris": URIs,
+                "position": 0,
+            }
+        });
+        console.log('addItemsToPlaylist', addItemsToPlaylist);
+
+    } catch(e) {
+        console.log('addItemsToPlaylist error', e);
+    }
+
+    }
 
 
     return(
         <div className={styles.playlistContainer}>
             <h1>Playlist</h1>
-            <input type='text'  placeholder='Name your playlist'  value={playlistName} onChange={ (e)=> setPlaylistName(e.target.value) } ></input>
+            <input type='text'  placeholder='Name your playlist'  onChange={ (e)=> setPlaylistName(e.target.value) } ></input>
             <ol className={styles.tracklist}>
             {tracklist.map((track) => {
                     return (
