@@ -8,7 +8,6 @@ import axios from 'axios';
 function SearchBar ({ token, search, setSearch, setSearchResponse}) {
     const [typeKey, setTypeKey] = useState('tracks');
     const [typeOfSearch, setTypeOfSearch] = useState('track');
-    let SEARCHVALUE;
 
 //--------------Use if we want to enable type selection
     // function handleTypeSelection() {
