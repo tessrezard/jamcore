@@ -50,7 +50,9 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
         const responseItems = [response.data[typeKey].items];
         console.log(`responseItems ${typeOfSearch}` , responseItems);
 
-        const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri' ];
+
+
+        const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri', 'album' ];
 
         const cleanData = responseItems[0].map(item => {
             const newItem = {}; 
@@ -59,7 +61,6 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
                     if (item.hasOwnProperty(key)) {
                         const justArtistsNames = item[key].map(artist => artist['name']);
                         newItem['artists'] = justArtistsNames;
-
                     }
                 } else {
                     if (item.hasOwnProperty(key)) {
