@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import styles from './SearchResults.module.css';
+import style from './SearchResults.module.css';
+import styles from '../MakingPlaylist.module.css';
+
 import Track from '../trackThings/Track';
 import { generateId } from '../../utilities';
 
@@ -19,15 +21,17 @@ function SearchResults ({ addTrackToPlaylist, searchResponse }) {
   };
 
     return(
-        <div className={styles.searchResultsContainer}>
+        <div  className={styles.section} >
             <h1>Search Results</h1>
-            <ul>
-                <div>
+            <ul >
+                <div className={styles.tracklist}>
                     {searchResponse.map((track) => {
                         return (
                             <li key={generateId()}>
                                 <Track name={track.name} artists={track.artists} key={track.id} explicit={track.explicit} duration_ms={track.duration_ms} image={track.album.images[1].url}/>
-                                <button className='trackBtn' onClick={() => handleAddTrack(track)}> + </button>
+                                <button className={styles.trackBtn} onClick={() => handleAddTrack(track)}>
+                                    <div className={styles.btn}>+</div> 
+                                </button>
                             </li >
                                 );
                             })

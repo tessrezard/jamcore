@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import styles from './Playlist.module.css';
+import playlistStyle from './Playlist.module.css';
+import styles from '../MakingPlaylist.module.css';
+
 import Track from '../trackThings/Track';
 import { generateId } from '../../utilities';
 import axios from 'axios';
@@ -84,22 +86,23 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, sea
 
 
     return (
-        <div className={styles.playlistContainer}>
+        <div  className={styles.section} >
             <h1>Playlist</h1>
-            <input id='inputNamingPlaylist' type='text' placeholder='Name your playlist' onChange={(e) => setPlaylistName(e.target.value)} ></input>
+            <input className={playlistStyle.input}  id='inputNamingPlaylist' type='text' placeholder='Name your playlist' onChange={(e) => setPlaylistName(e.target.value)} ></input>
             <ol className={styles.tracklist}>
                 {tracklist.map((track) => {
                     return (
                         <li key={generateId()}>
                             <Track name={track.name} artists={track.artists} key={track.id} explicit={track.explicit} duration_ms={track.duration_ms}  image={track.album.images[1].url} />
-                            <button className='trackBtn' onClick={() => handleRemoveTrack(track)}> - </button>
+                            <button className={styles.trackBtn} onClick={() => handleRemoveTrack(track)}> 
+                                <div className={styles.btn}>-</div> 
+                            </button>
                         </li >
                     );
                 })
                 }
             </ol>
-            <button onClick={addPlaylist} >Add to Spotify</button>
-
+            <button className={playlistStyle.button} onClick={addPlaylist} >Add to Spotify</button>
         </div>
     )
 };

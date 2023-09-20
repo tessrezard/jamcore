@@ -1,15 +1,22 @@
 .App {
   box-sizing: border-box;
   text-align: center;
+  background-color: #fbfbfb;
+  overflow-y: hidden;
 }
+
+
 h1{
   font-family: Arial, Helvetica, sans-serif;
+  /* font-family: "HWT Arabesque W00 Regular";
+  font-style: normal;
+  font-size: 3em;
+  font-weight: 400; */
 }
 
 .App-header {
   min-height: 20vh;
   display: flex;
-  background-color: #fed5ca;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -18,26 +25,93 @@ h1{
 .spotifytBtn{
   display: flex;
   justify-content: center;
+  font-size: 1.2em;
   align-items: center;
   padding: 0.5em;
   border: 1px solid #ffff;
-  background-color: aquamarine;
-  height: 20px;
+  height: 40px;
   border-radius: 50px;
   margin: 1em;
-}
-
-.spotifytBtn a{
-  font-size: 16px;
+  cursor: pointer;
 
 }
 
 
+.logInBtn {
+  background-color: #e97298;
+  text-decoration: none;
+  width: 170.625px;
+  align-items: center;
+  box-sizing: border-box;
+  display :flex;
+  height: 40px;
+  justify-content: center;
 
+  /* margin-bottom :19.2px;
+  margin-left: 19.2px;
+  margin-right :19.2px;
+  margin-top :19.2px;
+  padding-bottom :9.6px;
+  padding-left :9.6px;
+  padding-right: 9.6px;
+  padding-top :9.6px; */
+  /* font-family :Arial;
+  font-feature-settings: normal;
+  font-kerning: auto; */
+  /* font-optical-sizing: auto;
+  font-size :19.2px;
+  font-stretch: 100%;
+  font-style :normal;
+  font-variant-alternates: normal;
+  font-variant-caps :normal;
+  font-variant-east-asian :normal;
+  font-variant-ligatures :normal;
+  font-variant-numeric :normal;
+  font-variation-settings: normal; */
+  /* font-weight: 400;
+  letter-spacing :normal;
+  line-height :normal;
+  text-align :center;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  word-spacing: 0px;
+  color: rgb(0, 0, 0);
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(255, 255, 255); */
+  /* border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(255, 255, 255);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(255, 255, 255);
+  border-top-style: solid;
+  border-top-width: 1px;
+  cursor: pointer;
+  text-rendering: auto;
+  writing-mode: horizontal-tb;
+  appearance: auto;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px; */
+  }
 
+.logOutBtn{
+  background-color: #a4e6a0;
+}
 
-
-
+a{
+  margin: 0;
+  padding: 0;
+}
 li {
   display: flex;
   justify-content: center;
@@ -46,10 +120,10 @@ li {
   margin: 1em;
 }
 
-.trackBtn {
+/* .trackBtn {
   border: none;
   background-color: bisque;
   padding: 3vw;
   font-size: 30px;
-}
+} */
 

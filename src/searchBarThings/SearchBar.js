@@ -17,7 +17,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
     // }
 
     function handleChange (e) {
-        if (!token){
+        if (!window.localStorage.getItem('token')){
             alert('You must be logged in to search! thank youuu x')
         } else {
             setSearch(e.target.value);

@@ -1,13 +1,17 @@
-.playlistContainer{
-    width: 50vw;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: flex-start;
-  }
 
-  .tracklist {
-    /* margin: auto; */
-    height: fit-content;
+.input {
+    width: 50%;
+    line-height: 3em;
+    font-size: 1em;
+    border: 1px solid white;
 
-  }
+
+}
+
+.input:focus {
+    outline: 1px solid rgb(85, 197, 109);
+}
+
+.button {
+    width: 200px;
+}

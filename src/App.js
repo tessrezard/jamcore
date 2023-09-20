@@ -26,6 +26,12 @@ function App() {
     // setTimeRemaining(0);
   }
 
+  if (!token){
+    if (window.localStorage.getItem('token')){
+      setToken(window.localStorage.getItem('token'));
+    }
+  }
+  
 
   useEffect(()=> {
     const hash = window.location.hash;
@@ -70,15 +76,20 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header className="App-header"/>
+        <p>For this to work, you'll need to grant access to your Spotify</p>
+        <p> This access will last for an hour</p>
         {!window.localStorage.getItem('token') ?
-          <div className='spotifytBtn'>
-              <a   title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
-                Log into Spotify
+          <div >
+              <a  className='spotifytBtn logInBtn' title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
+                sign in to Spotify
               </a>
+              <p>(to get access token)</p>
           </div>
             :
             <>
-                <button className='spotifytBtn' onClick={logout} >Log out of Spotify </button>
+                <button className='spotifytBtn logOutBtn' onClick={logout} >
+                  sign out of Spotify 
+                </button>
             </>
 
         }

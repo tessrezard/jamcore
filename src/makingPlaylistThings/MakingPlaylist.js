@@ -24,8 +24,8 @@ function MakingPlaylist ({search, searchResponse, token}) {
 
     return(
         <div className={styles.makingPlaylistContainer} >
-          <SearchResults addTrackToPlaylist={addTrackToPlaylist} searchResponse={searchResponse} />
-          <Playlist token={token} tracklist={tracklist} setTracklist={setTracklist} removeTrackfromPlaylist={removeTrackfromPlaylist} searchResponse={searchResponse}/>
+          <SearchResults className={styles.section} addTrackToPlaylist={addTrackToPlaylist} searchResponse={searchResponse} />
+          <Playlist className={styles.section} token={token} tracklist={tracklist} setTracklist={setTracklist} removeTrackfromPlaylist={removeTrackfromPlaylist} searchResponse={searchResponse}/>
         </div>
     )
 };

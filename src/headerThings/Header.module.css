@@ -1,5 +1,19 @@
+.logo {
+  padding: 9px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 2em;
+  border: 1px solid black;
+  border-radius: 80%;
+}
+
 .appTitle{
-    text-shadow: 1px 1px 0px rgb(182, 107, 119);
-    color: rgb(52, 79, 57);
-    font-size: calc(10px + 2vmin);
+    /* text-shadow: 3px 3px 0px rgb(225, 105, 125); */
+    color: rgb(0, 0, 0);
+    font-size: calc(30px + 2vmin);
   }
+
+h1{
+  font-family: "HWT Arabesque W00 Regular";
+  font-style: normal;
+  font-weight: 400;
+}

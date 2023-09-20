@@ -2,12 +2,49 @@
     display: flex;
     flex-flow: row ;
     background-color: beige;
-    width: 25vw;
+    width: 30vw;
+    height: 120px;
+    overflow: scroll;
+    border-top-left-radius: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    
 }
 
 .trackInfo {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     background-color: beige;
-    width: 25vw;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 3px;
+}
+
+.img {
+    width: 120px;
+    height: 120px;
+}
+
+h3, h4, h5, p {
+    margin: 2px;
+}
+
+h3 {
+    font-size: 1.15em;
+}
+
+h4 {
+    font-size: 1em;
+    color: grey
+}
+
+h5 {
+    font-size: 0.75em;
+    color: blue
+}
+
+p {
+    font-size: 0.75em;
+
 }

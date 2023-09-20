@@ -4,7 +4,7 @@ import styles from './Track.module.css'
 function Track({ name, artists, key, id, explicit, duration_ms, image }) {
 
   const duration_s = ((duration_ms / 1000) / 60).toFixed(2);
-
+  const duration = duration_s.split('.').join(':');
   //React is getting VERY upset about e wanting to know the length of artists. 
   // console.log('artists.length', key.length);
   // let artistsSting;
@@ -17,8 +17,8 @@ function Track({ name, artists, key, id, explicit, duration_ms, image }) {
   return (
 
     <div className={styles.trackContainer}>
-      <div className={styles.trackInfo}>
-        <img src={image} alt='album image' width="120" height="120" />
+      <div>
+        <img src={image} alt='album image' className={styles.img}  />
       </div>
       <div className={styles.trackInfo}>
         <h3>
@@ -28,7 +28,7 @@ function Track({ name, artists, key, id, explicit, duration_ms, image }) {
           {artists}
         </h4>
         <h5>
-          {duration_s}
+          {duration}
         </h5>
         <p>
           {explicit ? 'explicit' : ''}
