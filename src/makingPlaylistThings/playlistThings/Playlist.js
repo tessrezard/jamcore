@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import playlistStyle from './Playlist.module.css';
 import styles from '../MakingPlaylist.module.css';
 
@@ -12,6 +12,11 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, sea
 
     const [playlistName, setPlaylistName] = useState('Your Jamcore Playlist');
     const URIs = [];
+
+    useEffect(()=>{
+        window.localStorage.setItem('tracklist', tracklist);
+        console.log(tracklist);
+      }, [tracklist])
 
     for (let i = 0; i < tracklist.length; i++) {
         URIs.push(tracklist[i].uri);

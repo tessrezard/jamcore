@@ -1,9 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-/notes
+/notes.md
 
-# api keys
-/secret
+
 
 # dependencies
 /node_modules
@@ -17,6 +16,7 @@
 /build
 
 # misc
+.env
 .DS_Store
 .env.local
 .env.development.local

@@ -1,0 +1,57 @@
+
+.makingPlaylistContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+  
+
+  .section {
+    width: 45vw;
+    margin: 0;
+    background-color: #fbfbfb;
+  
+  }
+
+  .tracklist {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    height: fit-content;
+    padding: 0;
+  
+    }
+
+    .trackBtn {
+      border: none;
+      background-color: bisque;
+      text-shadow: 2px 2px  rgb(200, 181, 181);
+      padding: 3vw;
+      font-size: 30px;
+      border-bottom-right-radius: 20px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+    }
+
+    .btn {
+      font-style: normal;
+      font-size: 1em;
+      font-weight: 200;
+      transform: rotate(-0.00turn);
+
+    }
+
+
+    .btn:hover {
+      animation: buttonSpin 1s ease-out infinite 3 ;
+    
+    }
+    @keyframes buttonSpin{
+      100% {
+           transform: rotate(-0.90turn);
+      }
+
+    }

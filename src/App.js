@@ -3,8 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './headerThings/Header';
 import SearchBar from './searchBarThings/SearchBar';
 import MakingPlaylist from './makingPlaylistThings/MakingPlaylist';
-import {CLIENT_ID, CLIENT_SECRET} from './APIs/secret';
-import Timer from './Timer';
+// import {CLIENT_ID, CLIENT_SECRET} from './APIs/ids.env';
 
 function App() {
 
@@ -12,6 +11,8 @@ function App() {
   const [searchResponse, setSearchResponse] = useState([]);
   const [token, setToken] = useState('');
   // const [timeRemaining, setTimeRemaining] = useState();
+  console.log(process.env.CLIENT_ID);
+  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ;
 
   const REDIRECT_URI = 'http://localhost:3000';
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
@@ -77,9 +78,10 @@ function App() {
       <header className="App-header">
         <Header className="App-header"/>
         <p>For this to work, you'll need to grant access to your Spotify</p>
-        <p> This access will last for an hour</p>
+              <p> This access will last for an hour</p>
         {!window.localStorage.getItem('token') ?
           <div >
+              
               <a  className='spotifytBtn logInBtn' title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
                 sign in to Spotify
               </a>
