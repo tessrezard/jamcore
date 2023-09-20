@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import jam from '../jam copy.png'
+
 function Header () {
     return(
         <>

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 
-function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, searchResponse }) {
+function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) {
 
     const [playlistName, setPlaylistName] = useState('Your Jamcore Playlist');
     const URIs = [];

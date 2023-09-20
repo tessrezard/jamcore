@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import style from './SearchResults.module.css';
+import React from 'react';
+// import style from './SearchResults.module.css';
 import styles from '../MakingPlaylist.module.css';
 
 import Track from '../trackThings/Track';

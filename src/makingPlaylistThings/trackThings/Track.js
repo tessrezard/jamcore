@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Track.module.css'
 
-function Track({ name, artists, key, id, explicit, duration_ms, image }) {
+function Track({ name, artists, explicit, duration_ms, image }) {
 
   const duration_s = ((duration_ms / 1000) / 60).toFixed(2);
   const duration = duration_s.split('.').join(':');

@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import SearchResults from './searchResultsThings/SearchResults';
 import Playlist from './playlistThings/Playlist';
 import { generateId } from '../utilities';
 import styles from './MakingPlaylist.module.css';
 
-function MakingPlaylist ({search, searchResponse, token}) {
+function MakingPlaylist ({ searchResponse, token}) {
   const [tracklist, setTracklist] = useState([]);
 
 
