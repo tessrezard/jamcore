@@ -28,7 +28,7 @@ function SearchResults ({ addTrackToPlaylist, searchResponse }) {
                     {searchResponse.map((track) => {
                         return (
                             <li key={generateId()}>
-                                <Track name={track.name} artists={track.artists} key={track.id} explicit={track.explicit} duration_ms={track.duration_ms} image={track.album.images[1].url}/>
+                                <Track name={track.name} artists={track.artists} explicit={track.explicit} duration_ms={track.duration_ms} image={track.album.images[1].url}/>
                                 <button className={styles.trackBtn} onClick={() => handleAddTrack(track)}>
                                     <div className={styles.btn}>+</div> 
                                 </button>
