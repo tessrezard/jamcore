@@ -15,14 +15,11 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
 
     useEffect(()=>{
         window.localStorage.setItem('tracklist', tracklist);
-        console.log(tracklist);
       }, [tracklist])
 
     for (let i = 0; i < tracklist.length; i++) {
         URIs.push(tracklist[i].uri);
     }
-
-    console.log('tracklist', tracklist);
 
     const handleRemoveTrack = (trackID) => {
         removeTrackfromPlaylist(trackID);

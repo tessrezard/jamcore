@@ -9,7 +9,6 @@ function MakingPlaylist ({ searchResponse, token}) {
 
 
 
-  console.log('searchResponse', searchResponse);
 
     const addTrackToPlaylist = (track) => {
         const newTrack = { ...track, uniqueId: generateId() };

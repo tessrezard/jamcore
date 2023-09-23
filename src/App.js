@@ -10,8 +10,6 @@ function App() {
   const [search, setSearch] = useState('');
   const [searchResponse, setSearchResponse] = useState([]);
   const [token, setToken] = useState('');
-  // const [timeRemaining, setTimeRemaining] = useState();
-  console.log(process.env.CLIENT_ID);
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ;
 
   const REDIRECT_URI = 'http://localhost:3000';
@@ -20,11 +18,13 @@ function App() {
   let timeRemaining = 0;
   let expirationTime = 0;
 
+  console.log('expirationTime', expirationTime)
+
   const logout = () => {
     window.localStorage.removeItem('token');
     setToken('');
     timeRemaining = 0;
-    // setTimeRemaining(0);
+    window.localStorage.removeItem('expirationTime');
   }
 
   if (!token){
@@ -37,13 +37,25 @@ function App() {
   useEffect(()=> {
     const hash = window.location.hash;
     let token = window.localStorage.getItem('token');
-    expirationTime = Date.now() + 3600 * 1000;
+
+    if (token && !window.localStorage.getItem('expirationTime')){
+      const getExpirationTime = Date.now() + 3600 * 1000;
+      window.localStorage.setItem('expirationTime', getExpirationTime);
+      expirationTime = window.localStorage.getItem('expirationTime');
+      console.log('NEW expirationTime', expirationTime)
+    }
+
+    if (token && window.localStorage.getItem('expirationTime')) {
+      expirationTime = window.localStorage.getItem('expirationTime');
+    }
 
     const checkTokenExpiration = () => {
       const currentTime = Date.now();
       // setTimeRemaining(expirationTime - currentTime);
       timeRemaining = expirationTime - currentTime;
-      console.log(timeRemaining);
+      console.log('timeRemaining', timeRemaining);
+      console.log('expirationTime', expirationTime)
+
       // window.localStorage.setItem('expirationTime', expirationTime);
       if (timeRemaining < 0 || !window.localStorage.getItem('token')){
         logout();
@@ -57,10 +69,6 @@ function App() {
       setToken(token);
     } 
 
-    // console.log('token', token);
-    // console.log('window.localStorage.getItem', window.localStorage.getItem('token', token))
-
-    // Check token expiration every minute (adjust this interval as needed)
     const tokenCheckInterval = setInterval(checkTokenExpiration, 5000);
     
     return () => {
@@ -68,9 +76,6 @@ function App() {
     };
 
   }, [])
-
-  // console.log('searchResponse in app', searchResponse);
-  console.log('is there a token?, ', token);
 
 
   return (
