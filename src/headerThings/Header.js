@@ -4,9 +4,7 @@ import styles from './Header.module.css';
 function Header () {
     return(
         <>
-            <div className={styles.logo}>
-                Jamcore
-            </div>
+
             <div className={styles.appTitle}>
                 <h1>What's your jam?</h1>
             </div>
