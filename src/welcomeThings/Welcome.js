@@ -14,7 +14,7 @@ return (
             You will be asked to grant youself permission to search and add a playlist. 
             When that is done, we can go ahead and start! </h3> */}
         <h3>The 'log in' will last an hour, 
-            and them you will be logged out automatically. 
+            and then you will be logged out automatically. 
             If you what to log out before the hour is up, you can click log out.</h3>
         <h2></h2>
     </div>

@@ -7,9 +7,7 @@ function Logo() {
 
 return (
     <>
-
         <img src={require('./jamcoreLogo.png')} className={styles.logo}/>
-
     </>
 );
 
