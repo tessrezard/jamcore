@@ -13,7 +13,7 @@ function App() {
 
   const [token, setToken] = useState('');
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ;
-  const REDIRECT_URI = 'https://jamcore.netlify.app/';
+  const REDIRECT_URI = 'https://jamcore.netlify.app';
   // const REDIRECT_URI = 'http://localhost:3000/';
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
   const RESPONSE_TYPE = 'token';
