@@ -26,7 +26,6 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
     };
 
     const checkPlaylistName = () => {
-        console.log('playlistName length', playlistName.length);
         if (playlistName.length <= 0){
             setPlaylistName('Your Jamcore Playlist');
         }
@@ -94,11 +93,12 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
             <ol className={styles.tracklist}>
                 {tracklist.map((track) => {
                     return (
-                        <li key={generateId()}>
+                        <li key={generateId()} className={styles.trackAndItsButtonContainer}>
                             <Track name={track.name} artists={track.artists} explicit={track.explicit} duration_ms={track.duration_ms}  image={track.album.images[1].url} />
                             <button className={styles.trackBtn} onClick={() => handleRemoveTrack(track)}> 
                                 <div className={styles.btn}>-</div> 
                             </button>
+
                         </li >
                     );
                 })

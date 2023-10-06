@@ -8,8 +8,6 @@ function MakingPlaylist ({ searchResponse, token}) {
   const [tracklist, setTracklist] = useState([]);
 
 
-
-
     const addTrackToPlaylist = (track) => {
         const newTrack = { ...track, uniqueId: generateId() };
         setTracklist([...tracklist, newTrack]);

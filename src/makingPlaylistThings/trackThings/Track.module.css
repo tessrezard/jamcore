@@ -1,29 +1,33 @@
 .trackContainer {
-    display: flex;
-    flex-flow: row ;
-    background-color: beige;
-    width: 30vw;
-    height: 120px;
+    /* display: flex; */
+    /* flex-flow: row ; */
+    /* justify-content: space-between; */
+    background-color: rgb(200, 216, 206);
+    width: 100%;
+    /* height: 17vh; */
     overflow: scroll;
-    border-top-left-radius: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    
+    border-top-left-radius: 18px;
+    z-index: 2;
+    display: flex;
+    flex-flow: row;
 }
 
 .trackInfo {
     display: flex;
     flex-flow: column;
-    background-color: beige;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 3px;
+    /* background-color: rgb(220, 240, 245); */
+    align-self: center;
+    justify-content: stretch;
+    flex: 1;
+
 }
 
 .img {
-    width: 120px;
-    height: 120px;
+    position: relative;
+    width: 17vh;
+    justify-self: flex-start; 
+
+
 }
 
 h3, h4, h5, p {
@@ -31,20 +35,20 @@ h3, h4, h5, p {
 }
 
 h3 {
-    font-size: 1.15em;
+    font-size: 1.75vw;
 }
 
 h4 {
-    font-size: 1em;
+    font-size: 1.5vw;
     color: grey
 }
 
 h5 {
-    font-size: 0.75em;
+    font-size: 1vw;
     color: blue
 }
 
 p {
-    font-size: 0.75em;
+    font-size: 1vw;
 
 }

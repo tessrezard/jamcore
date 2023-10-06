@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
 .makingPlaylistContainer {
     display: flex;
@@ -12,7 +13,6 @@
     width: 45vw;
     margin: 0;
     background-color: #fbfbfb;
-  
   }
 
   .tracklist {
@@ -21,19 +21,34 @@
     flex-flow: column;
     height: fit-content;
     padding: 0;
-  
+    }
+
+    .trackAndItsButtonContainer{
+      border-bottom-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border: 1.5px solid rgb(181, 203, 189);
+      width: 35vw;
+      height: 17vh;
     }
 
     .trackBtn {
       border: none;
       background-color: bisque;
-      text-shadow: 2px 2px  rgb(200, 181, 181);
-      padding: 3vw;
-      font-size: 30px;
+      /* text-shadow: 2px 2px  rgb(200, 181, 181); */
+      /* padding: 3vw; */
+      font-size: 3vw;
+      width: 8vw;
+      z-index: 1;
       border-bottom-right-radius: 20px;
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
+    }
+
+    .trackBtn:hover {
+      background-color: rgb(243, 186, 186);
+      transition: all 300ms;
+    }
+
+    .trackBtn:active {
+      background-color: rgb(255, 140, 159);
     }
 
     .btn {
@@ -41,17 +56,15 @@
       font-size: 1em;
       font-weight: 200;
       transform: rotate(-0.00turn);
-
+      font-family: 'Short Stack', cursive;
     }
 
-
-    .btn:hover {
-      animation: buttonSpin 1s ease-out infinite 3 ;
-    
+    .trackBtn:active .btn{
+      font-size: larger;
+      transition: all 100ms;
+      transform: rotate(180deg);
     }
-    @keyframes buttonSpin{
-      100% {
-           transform: rotate(-0.90turn);
-      }
 
+    @media only screen and (min-width: 1400px) {
+      
     }

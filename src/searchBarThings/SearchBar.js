@@ -17,7 +17,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
     // }
 
     function handleChange (e) {
-        if (!window.localStorage.getItem('token')){
+        if (!token && !window.localStorage.getItem('token')){
             alert('You must be logged in to search! thank youuu x')
         } else {
             setSearch(e.target.value);
@@ -35,7 +35,6 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
     const searchSpotify = async (e) => {
 
         e.preventDefault();
-
         const response = await axios.get('https://api.spotify.com/v1/search?' , {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -46,14 +45,9 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
                 limit: 15,
             }
         });
-
         const responseItems = [response.data[typeKey].items];
-        console.log(`responseItems ${typeOfSearch}` , responseItems);
-
-
-
+        // console.log(`responseItems ${typeOfSearch}` , responseItems);
         const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri', 'album' ];
-
         const cleanData = responseItems[0].map(item => {
             const newItem = {}; 
             keysToCopy.forEach((key) => {
@@ -71,7 +65,6 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
             });
             return newItem;
         })
-
          setSearchResponse(cleanData);
 
     }
