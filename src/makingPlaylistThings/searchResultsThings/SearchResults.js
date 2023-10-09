@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef }from 'react';
 // import style from './SearchResults.module.css';
 import styles from '../MakingPlaylist.module.css';
 
@@ -7,21 +7,24 @@ import { generateId } from '../../utilities';
 
 function SearchResults ({ addTrackToPlaylist, searchResponse }) {
 
-    // const [searchedSongs, setSearchedSongs] = useState([
-    //     {name: 'Song2', artist: 'artist2', album: 'album 1', id: '1234a', uri: '12334'}, 
-    //     {name: 'Song1', artist: 'artist1', album: 'album 1', id: '1234b', uri: '12335'}, 
-    //     {name: 'Song3', artist: 'artist3', album: 'album 1', id: '1234c', uri: '12336'}, 
-    // ]);
+    const resultsRef = useRef(null);
 
 
-  // Function to add a track to the playlist
-  const handleAddTrack = (song) => {
-    // Call the addTrackToPlaylist function to add the track to the playlist
-    addTrackToPlaylist(song);
-  };
+    // Function to add a track to the playlist
+    const handleAddTrack = (song) => {
+        // Call the addTrackToPlaylist function to add the track to the playlist
+        addTrackToPlaylist(song);
+    };
+
+    useEffect(() => {
+        // Scroll to the search results element when results are updated
+        if (resultsRef.current) {
+        resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [searchResponse]);
 
     return(
-        <div  className={styles.section} >
+        <div  className={styles.section} ref={resultsRef} >
             <h1>Search Results</h1>
             <ul >
                 <div className={styles.tracklist}>

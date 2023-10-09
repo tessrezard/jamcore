@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, } from 'react';
 import styles from './SearchBar.module.css';
 import axios from 'axios';
 
 // there is functionality set up here to be able to search for artists or for albums as well. 
 // If you uncomment the label and select tags in return, this should work. but app not set up to reveive these as this is a playllist making app. 
 
-function SearchBar ({ token, search, setSearch, setSearchResponse}) {
+function SearchBar ({ token, search, setSearch, setSearchResponse, searchResultsRef}) {
     const [typeKey, setTypeKey] = useState('tracks');
     const [typeOfSearch, setTypeOfSearch] = useState('track');
+
+    
 
 //--------------Use if we want to enable type selection
     // function handleTypeSelection() {
@@ -31,9 +33,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
         }
     }
 
-
     const searchSpotify = async (e) => {
-
         e.preventDefault();
         const response = await axios.get('https://api.spotify.com/v1/search?' , {
             headers: {

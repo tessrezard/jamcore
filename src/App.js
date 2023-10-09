@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,  } from 'react';
 import Header from './headerThings/Header';
 import Welcome from './welcomeThings/Welcome';
 import Logo from './Logo';
@@ -11,7 +11,6 @@ function App() {
 
   const [search, setSearch] = useState('');
   const [searchResponse, setSearchResponse] = useState([]);
-
 
   const [token, setToken] = useState('');
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
@@ -26,10 +25,10 @@ function App() {
   // console.log('hash', window.location.hash);
 
   const logout = () => {
-    console.log('enter logout');
+    // console.log('enter logout');
     window.location.hash = '';
     window.localStorage.removeItem('token');
-    console.log('window.localStorage.getItem(token)', window.localStorage.getItem('token'))
+    // console.log('window.localStorage.getItem(token)', window.localStorage.getItem('token'))
     setToken('');
     // timeRemaining = 0;
     window.localStorage.removeItem('expirationTime');
@@ -39,7 +38,7 @@ function App() {
 
   // -- SET TOKEN FROM HASH -- if there is a hash, but the token is not yet set. 
   if (!token && hash) {
-    console.log('no token, yes hash')
+    // console.log('no token, yes hash')
     const hashToken = hash.substring(1).split('&').find(element => element.startsWith('access_token')).split('=')[1];
     setToken(hashToken);
     window.location.hash = '';
@@ -54,7 +53,7 @@ function App() {
 
   // -- SET TOKEN FROM LOCAL STORAGE -- if the page has been reloaded, but the token has not timed out (is still in local storage)
   if (!token) {
-    console.log('there is no token in state variable');
+    // console.log('there is no token in state variable');
     if (window.localStorage.getItem('token')) {
       setToken(window.localStorage.getItem('token'));
     }
@@ -65,7 +64,7 @@ function App() {
     const getExpirationTime = Date.now() + 3600 * 1000;
     window.localStorage.setItem('expirationTime', getExpirationTime);
     expirationTime = window.localStorage.getItem('expirationTime');
-    console.log('NEW expirationTime', expirationTime)
+    // console.log('NEW expirationTime', expirationTime)
   }
 
   // -- SET EXPIRATION TIME FROM LOCAL STORAGE -- (if reload, state lost)
@@ -74,28 +73,10 @@ function App() {
   }
 
   if (expirationTime === 0) {
-    console.log('expirationTime is 0 :', expirationTime)
+    // console.log('expirationTime is 0 :', expirationTime)
   } else if (expirationTime > 0) {
-    console.log('we have an expiration time: it is ', expirationTime);
+    // console.log('we have an expiration time: it is ', expirationTime);
   }
-
-
-  // if (timeRemaining < 0){
-  //   timeRemaining = 0;
-  //   console.log('time remaining made 0: ', timeRemaining);
-  // }
-
-  // if(timeRemaining){
-  //   console.log('timeRemaining', timeRemaining)
-  // } else {
-  //   console.log('no time remaining variable');
-  // }
-
-
-  //  if (token && window.localStorage.getItem('expirationTime')) {
-  //   expirationTime = window.localStorage.getItem('expirationTime');
-  // }
-
 
 
 
@@ -115,7 +96,7 @@ function App() {
         timeRemainingInMins = 0;
       }
       // const timeRemainingInMins = timeRemaining / 60000;
-      console.log('timeRemainingInMins', timeRemainingInMins);
+      // console.log('timeRemainingInMins', timeRemainingInMins);
       if (timeRemaining < 0 || !window.localStorage.getItem('token')) {
         logout();
       }
@@ -155,7 +136,7 @@ function App() {
           <Header className="App-header" />
           <main>
             <SearchBar setSearch={setSearch} search={search} token={token} setSearchResponse={setSearchResponse} />
-            <MakingPlaylist token={token} search={search} searchResponse={searchResponse} />
+            <MakingPlaylist token={token} search={search} searchResponse={searchResponse}  />
           </main>
         </>
       }

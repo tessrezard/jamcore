@@ -15,6 +15,20 @@
     background-color: #fbfbfb;
   }
 
+@media (max-width: 800px) {
+  .makingPlaylistContainer {
+    flex-flow: column-reverse;
+    width: 100vw;
+  }
+  .section {
+    width: 95vw;
+    margin: 0;
+    background-color: #fbfbfb;
+  }
+
+}
+
+
   .tracklist {
     display: flex;
     justify-content: center;
@@ -40,6 +54,7 @@
       width: 8vw;
       z-index: 1;
       border-bottom-right-radius: 20px;
+      min-width: 25px;
     }
 
     .trackBtn:hover {
