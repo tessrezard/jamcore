@@ -26,7 +26,7 @@
 
 .img {
     position: relative;
-    width: 17vh;
+    width: 6em;
     justify-self: flex-start; 
     border-top-left-radius: 18px;
 
@@ -38,7 +38,7 @@ h3, h4, h5, p {
 }
 
 h3 {
-    font-size: 1.75vw;
+    font-size: 1em;
 }
 
 h4 {
@@ -47,12 +47,12 @@ h4 {
 }
 
 h5 {
-    font-size: 1vw;
+    font-size: 0.75em;
     color: rgb(141, 136, 187)
 }
 
 p {
-    font-size: 1vw;
+    font-size: 0.75em;
     color: rgb(136, 128, 211)
 
 }
@@ -61,16 +61,5 @@ p {
     .trackContainer {
         width: 600px;
     }
-    h3 {
-        font-size: 1.2em;
-    }
-    h4 {
-        font-size: 1em;
-    }
-    h5 {
-        font-size: 1.5vw;
-    }
-    p {
-        font-size: 1.3vw;
-    }
+
   }

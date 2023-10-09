@@ -27,15 +27,14 @@
       border-top-left-radius: 20px;
       border: 3px solid rgb(232, 221, 250);
       width: 35vw;
-      height: 17vh;
+      height: 6em;
     }
 
     .trackBtn {
       border: none;
       background-color: bisque;
       background-color: rgb(232, 221, 250);
-
-      font-size: 3vw;
+      font-size: 2.5rem;
       width: 8vw;
       z-index: 1;
       border-bottom-right-radius: 20px;
