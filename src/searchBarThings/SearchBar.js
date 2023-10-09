@@ -72,15 +72,15 @@ function SearchBar ({ token, search, setSearch, setSearchResponse}) {
 
     return(
         <div className={styles.searchBarContainer}>
-            <form role='search' onSubmit={searchSpotify}>
+            <form role='search' onSubmit={searchSpotify} >
                 {/* <label htmlFor="typeOfSearch">Type of search</label>
                 <select name="typeOfSearch" id="typeOfSearch" onChange={handleTypeSelection}>
                     <option value="track">Track</option>
                     <option value="artist">Artist</option>
                     <option value="album">Album</option>
                 </select> */}
-                <input required className={styles.searchBar} type='text' value={search} onChange={handleChange} onKeyDown={handleKeyDown}/>
-                <input className={styles.submitButton} type='submit' value='Search'/>
+                <input required className={styles.searchBar} type='text' value={search} onChange={handleChange} onKeyDown={handleKeyDown} placeholder='Search'/>
+                <input className='syledButton' type='submit' value='Search'/>
             </form>
         </div>
     )
