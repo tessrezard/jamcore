@@ -3,8 +3,7 @@
   text-align: center;
   padding: 2%;
   overflow-y: scroll;
-
-  background-color: #eeeaea;
+  background-color: #faf2ea;
   /* background-color: #f6e9e9; */
   /* height: 100%; */
   height: 100vh;
@@ -15,7 +14,27 @@
   background-color: #a4e6a0;
   margin: 1em;
   border-top-right-radius: 9px;
+  border: 3px outset rgb(228, 248, 217);
   border-bottom-left-radius: 9px;
+}
+
+.syledButton:hover{
+  background-color: #87d783;
+
+}
+
+.syledButton:active{
+  background-color: #71c26e;
+  background-color: #6bc467;
+
+}
+.addtoSpotBtn{
+  width: 17vw;
+  height: 3em;
+  border-top-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+  font-size: 1em;
+  min-width: 100px;
 }
 
 h1{
@@ -27,11 +46,12 @@ h1{
 }
 
 .App-header {
-  /* min-height: 20vh; */
+  min-height: 10vh;
   padding-top: 1%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: sticky;
 }
 
 
@@ -49,6 +69,14 @@ h1{
   color: black;
 }
 
+.spotifytBtn:hover{
+  background-color: #73d66e;
+}
+.spotifytBtn:active{
+  background-color: #60cb5b;
+}
+
+
 
 .logInBtn {
   background-color: #8dff87;
@@ -59,62 +87,6 @@ h1{
   display :flex;
   height: 40px;
   justify-content: center;
-
-  /* margin-bottom :19.2px;
-  margin-left: 19.2px;
-  margin-right :19.2px;
-  margin-top :19.2px;
-  padding-bottom :9.6px;
-  padding-left :9.6px;
-  padding-right: 9.6px;
-  padding-top :9.6px; */
-  /* font-family :Arial;
-  font-feature-settings: normal;
-  font-kerning: auto; */
-  /* font-optical-sizing: auto;
-  font-size :19.2px;
-  font-stretch: 100%;
-  font-style :normal;
-  font-variant-alternates: normal;
-  font-variant-caps :normal;
-  font-variant-east-asian :normal;
-  font-variant-ligatures :normal;
-  font-variant-numeric :normal;
-  font-variation-settings: normal; */
-  /* font-weight: 400;
-  letter-spacing :normal;
-  line-height :normal;
-  text-align :center;
-  text-indent: 0px;
-  text-shadow: none;
-  text-transform: none;
-  word-spacing: 0px;
-  color: rgb(0, 0, 0);
-  border-bottom-color: rgb(255, 255, 255);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  border-left-color: rgb(255, 255, 255); */
-  /* border-left-style: solid;
-  border-left-width: 1px;
-  border-right-color: rgb(255, 255, 255);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgb(255, 255, 255);
-  border-top-style: solid;
-  border-top-width: 1px;
-  cursor: pointer;
-  text-rendering: auto;
-  writing-mode: horizontal-tb;
-  appearance: auto;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px; */
   }
 
 .logOutBtn{
@@ -125,14 +97,16 @@ a{
   margin: 0;
   padding: 0;
 }
+
 li {
   display: flex;
   justify-content: center;
-
   flex-flow: row ;
   margin: 1em;
 }
-
+ul,  ol {
+  padding: 1em;
+}
 /* .trackBtn {
   border: none;
   background-color: bisque;

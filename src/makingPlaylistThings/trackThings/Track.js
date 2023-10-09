@@ -21,15 +21,9 @@ function Track({ name, artists, explicit, duration_ms, image }) {
         <img src={image} alt='album image' className={styles.img}  />
       </div>
       <div className={styles.trackInfo}>
-        <h3>
-          {name}
-        </h3>
-        <h4>
-          {artists}
-        </h4>
-        <h5>
-          {duration}
-        </h5>
+        <h3>{name}</h3>
+        <h4>{artists}</h4>
+        <h5>{duration}</h5>
         <p>
           {explicit ? 'explicit' : ''}
         </p>

@@ -3,12 +3,13 @@
     /* flex-flow: row ; */
     /* justify-content: space-between; */
     background-color: rgb(200, 216, 206);
+    background-color: #fff3e7;
     width: 100%;
     /* height: 17vh; */
-    overflow: scroll;
     border-top-left-radius: 18px;
     z-index: 2;
     display: flex;
+    overflow: hidden;
     flex-flow: row;
     min-width: 250px;
 }
@@ -27,6 +28,7 @@
     position: relative;
     width: 17vh;
     justify-self: flex-start; 
+    border-top-left-radius: 18px;
 
 
 }
@@ -46,10 +48,28 @@ h4 {
 
 h5 {
     font-size: 1vw;
-    color: blue
+    color: rgb(59, 86, 86)
 }
 
 p {
     font-size: 1vw;
 
 }
+
+@media (max-width: 800px) {
+    .trackContainer {
+        width: 600px;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    h4 {
+        font-size: 1em;
+    }
+    h5 {
+        font-size: 1.5vw;
+    }
+    p {
+        font-size: 1.3vw;
+    }
+  }

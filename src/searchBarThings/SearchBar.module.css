@@ -12,6 +12,7 @@ form{
     width: 50%;
     height: 3em;
     background-color: rgb(146, 208, 187);
+    background-color: rgb(232, 221, 250);
 }
 
 .searchBar:focus {

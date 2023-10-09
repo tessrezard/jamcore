@@ -118,7 +118,7 @@ function App() {
         <Logo />
         {token ?
           <button className='spotifytBtn logOutBtn' onClick={logout} onChange={e => e.preventDefault()} >
-            Log out of Spotify
+            Log out
           </button>
           :
           <a className='spotifytBtn logInBtn' title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
