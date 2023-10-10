@@ -102,7 +102,7 @@ li {
   display: flex;
   justify-content: center;
   flex-flow: row ;
-  margin: 1em;
+  margin: 0.5em;
 }
 ul,  ol {
   padding: 1em;
