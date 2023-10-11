@@ -10,7 +10,7 @@
 }
 
 .input:focus {
-    outline: 1px solid rgb(85, 197, 109);
+    outline: 2px solid #a3dba3;
 }
 
 /* .button {
