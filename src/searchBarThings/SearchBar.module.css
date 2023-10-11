@@ -13,9 +13,8 @@ form{
     width: 50%;
     height: 3em;
     background-color: rgb(232, 221, 250);
-    border-width: 2px;
-    border-style: inset;
-    border-color: rgb(193, 177, 219), rgb(249, 246, 255);
+    border: 3px inset rgb(220, 198, 255);
+
 }
 
 .searchBar:focus {

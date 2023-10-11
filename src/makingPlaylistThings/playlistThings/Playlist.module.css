@@ -5,9 +5,8 @@
     font-size: 1em;
     border: 1px solid white;
     background-color: rgb(232, 221, 250);
-    border-width: 2px;
-    border-style: inset;
-    border-color: rgb(193, 177, 219), rgb(249, 246, 255);
+    border: 3px inset rgb(220, 198, 255);
+
 }
 
 .input:focus {
