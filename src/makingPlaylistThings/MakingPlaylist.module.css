@@ -88,10 +88,6 @@ h1{
         width: 75vw;
       }
       .trackBtn {
-        border: none;
-        /* text-shadow: 2px 2px  rgb(200, 181, 181); */
-        /* padding: 3vw; */
-        font-size: 5vw;
         width: 17vw;
       }
     }
