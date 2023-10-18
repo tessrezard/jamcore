@@ -54,7 +54,7 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
                 },
                 data: {
                     "name": `${playlistName}`,
-                    "description": "New API playlist description",
+                    "description": "Made on jamcore.netlify.app with the spotify API",
                     "public": false,
                 }
             });
