@@ -5,6 +5,7 @@ import Welcome from './welcomeThings/Welcome';
 import Logo from './Logo';
 import SearchBar from './searchBarThings/SearchBar';
 import MakingPlaylist from './makingPlaylistThings/MakingPlaylist';
+import Footer from './footerThings/Footer';
 // import {CLIENT_ID, CLIENT_SECRET} from './APIs/ids.env';
 
 function App() {
@@ -120,10 +121,13 @@ function App() {
           <button className='spotifytBtn logOutBtn' onClick={logout} onChange={e => e.preventDefault()} >
             Log out
           </button>
+
           :
           <a className='spotifytBtn logInBtn' title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
             Log in to Spotify
           </a>        }
+          <img src={require('./Spotify_Icon_RGB_Green.png')} className='spotifyLogo'/>
+          
       </header>
 
       {!token ?
@@ -140,8 +144,10 @@ function App() {
           </main>
         </>
       }
-
-
+      <footer className="App-footer">
+        <Footer/>
+      </footer>
+    
     </div>
   );
 }
