@@ -65,7 +65,8 @@ h1{
   left: 2%;
   right: 2%;
   background-color: #faf2ea;
-
+  z-index: 1;
+  
 }
 
 .spotifytBtn{
