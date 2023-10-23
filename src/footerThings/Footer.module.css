@@ -1,0 +1,15 @@
+.appFooter{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color: #ffffff;
+}
+
+.appFooter h4 {
+    color: #ffffff;
+}
+
+
+.spotifyLogo{
+    height: 30px;
+  }

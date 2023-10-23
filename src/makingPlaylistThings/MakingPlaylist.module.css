@@ -10,6 +10,7 @@ h1{
     justify-content: center;
     margin: auto;
     width: 100%;
+    padding-bottom: 5%;
   }
 
   .section {
@@ -40,7 +41,7 @@ h1{
       background-color: rgb(232, 221, 250);
       font-size: 2.5rem;
       width: 8vw;
-      z-index: 3;
+      /* z-index: 9; */
       border-bottom-right-radius: 20px;
       border: 3px outset rgb(204, 187, 233);
       min-width: 25px;

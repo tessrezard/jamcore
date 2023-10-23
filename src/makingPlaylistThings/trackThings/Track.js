@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Track.module.css'
 
-function Track({ name, artists, explicit, duration_ms, image }) {
+function Track({ name, artists, explicit, duration_ms, image, link }) {
 
   const duration_s = ((duration_ms / 1000) / 60).toFixed(2);
   const duration = duration_s.split('.').join(':');
@@ -13,10 +13,14 @@ function Track({ name, artists, explicit, duration_ms, image }) {
   //   console.log('artistsSting', artistsSting);
   // }
 
+  const openTrackInSpotify = () => {
+    window.open(`${link}`,  "_blank" )
+  }
+
 
   return (
 
-    <div className={styles.trackContainer}>
+    <div onClick={openTrackInSpotify} className={styles.trackContainer}>
       <div>
         <img src={image} alt='album image' className={styles.img}  />
       </div>
