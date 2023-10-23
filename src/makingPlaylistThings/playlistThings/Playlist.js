@@ -94,7 +94,7 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
                 {tracklist.map((track) => {
                     return (
                         <li key={generateId()} className={styles.trackAndItsButtonContainer}>
-                            <Track name={track.name} artists={track.artists} explicit={track.explicit} duration_ms={track.duration_ms}  image={track.album.images[1].url} />
+                            <Track name={track.name} artists={track.artists} explicit={track.explicit} duration_ms={track.duration_ms}  image={track.album.images[1].url} link={track.external_urls.spotify} />
                             <button className={styles.trackBtn} onClick={() => handleRemoveTrack(track)}> 
                                 <div className={styles.btn}>-</div> 
                             </button>
