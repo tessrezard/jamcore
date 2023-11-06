@@ -10,7 +10,7 @@
 }
 
 
-.syledButton{
+.styledButton{
   background-color: #a4e6a0;
   margin: 1em;
   border-top-right-radius: 9px;
@@ -18,12 +18,12 @@
   border-bottom-left-radius: 9px;
 }
 
-.syledButton:hover{
+.styledButton:hover{
   background-color: #87d783;
 
 }
 
-.syledButton:active{
+.styledButton:active{
   background-color: #71c26e;
   background-color: #6bc467;
 

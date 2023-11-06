@@ -64,7 +64,7 @@ function SearchBar ({ token, search, setSearch, setSearchResponse, searchResults
         <div className={styles.searchBarContainer}>
             <form role='search' onSubmit={searchSpotify} >
                 <input id='search' required className={styles.searchBar} type='text' value={search} onChange={handleChange} onKeyDown={handleKeyDown} placeholder='Search'/>
-                <input className='syledButton' type='submit' value='Search'/>
+                <input className='styledButton' type='submit' value='Search'/>
             </form>
         </div>
     )

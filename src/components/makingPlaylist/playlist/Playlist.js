@@ -103,7 +103,7 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
                 })
                 }
             </ol>
-            <button className='syledButton addtoSpotBtn'  onClick={addPlaylist} >Add to Spotify</button>
+            <button className='styledButton addtoSpotBtn'  onClick={addPlaylist} >Add to Spotify</button>
         </div>
     )
 };
