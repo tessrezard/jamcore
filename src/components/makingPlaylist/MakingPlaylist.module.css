@@ -92,3 +92,10 @@ h1{
         width: 17vw;
       }
     }
+
+
+    @media (max-width: 400px)  {
+      .trackAndItsButtonContainer{
+        width: 80vw;
+      }
+    }

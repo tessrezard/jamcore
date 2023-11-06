@@ -8,7 +8,6 @@ function Track({ name, artists, explicit, duration_ms, image, link }) {
 
   // if there multiple artists on a track, print them with spaces
   let artistsString = artists.join(', ')
-  console.log('names', artistsString)
 
   const openTrackInSpotify = () => {
     window.open(`${link}`, "_blank")
