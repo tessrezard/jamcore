@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './Footer.module.css';
 
-function Footer () {
-    return(
+function Footer() {
+    return (
         <>
             <div className={styles.appFooter}>
                 <div className={styles.spotify}>
-                    <h4>All metadata supplied and made available by Spotify.</h4>
+                    <p>All metadata supplied and made available by Spotify.</p>
 
                 </div>
-                <img src={require('../../Spotify_Logo_RGB_Green.png')} className={styles.spotifyLogo}/>
+                <img src={require('../../Spotify_Logo_RGB_Green.png')} className={styles.spotifyLogo} alt='spotify logo' />
 
-            <h4>Click on a track to open it in spotify.</h4>
+                <p>Click on a track to open it in spotify.</p>
             </div>
         </>
 

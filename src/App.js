@@ -10,14 +10,16 @@ import Footer from './components/footer/Footer.js';
 
 function App() {
 
-  
+
   const [search, setSearch] = useState('');
   const [searchResponse, setSearchResponse] = useState([]);
 
   const [token, setToken] = useState('');
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-  // const REDIRECT_URI = 'https://jamcore.netlify.app';
-  const REDIRECT_URI = 'http://localhost:3000/';
+
+  const REDIRECT_URI = 'https://jamcore.netlify.app';
+  // const REDIRECT_URI = 'http://localhost:3000/';
+  
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
   const RESPONSE_TYPE = 'token';
   let expirationTime = 0;
@@ -100,32 +102,37 @@ function App() {
       <header className="App-header">
         <Logo />
         {token ?
-          <button className='spotifytBtn logOutBtn' onClick={logout} onChange={e => e.preventDefault()} >
-            Log out
-          </button>
-
+          (<>
+            <button className='spotifytBtn logOutBtn' onClick={logout} onChange={e => e.preventDefault()} >
+              Log out
+            </button>
+          </>)
           :
-          <a className='spotifytBtn logInBtn' title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
-            Log in to Spotify
-          </a>}
-        <img src={require('./Spotify_Icon_RGB_Green.png')} className='spotifyLogo' />
-
+          (<>
+            <a className='spotifytBtn logInBtn' title='Log into Spotify (logs you out after 1 hour)' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-private playlist-modify`} >
+              Log in to Spotify
+            </a>
+          </>)
+        }
+        <img src={require('./Spotify_Icon_RGB_Green.png')} className='spotifyLogo' alt='Spotify logo' />
       </header>
 
-      {!token ?
-        <div >
-          <Welcome />
+      <main >
+        {!token ?
+          (<>
+            <Welcome />
+          </>)
+          :
+          <>
+            <Header/>
+            <div>
+              <SearchBar setSearch={setSearch} search={search} token={token} setSearchResponse={setSearchResponse} />
+              <MakingPlaylist token={token} search={search} searchResponse={searchResponse} />
+            </div>
+          </>
+        }
+      </main>
 
-        </div>
-        :
-        <>
-          <Header className="App-header" />
-          <main>
-            <SearchBar setSearch={setSearch} search={search} token={token} setSearchResponse={setSearchResponse} />
-            <MakingPlaylist token={token} search={search} searchResponse={searchResponse} />
-          </main>
-        </>
-      }
       <footer className="App-footer">
         <Footer />
       </footer>

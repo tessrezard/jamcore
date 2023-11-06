@@ -44,10 +44,10 @@
 
 h1{
   font-family: Arial, Helvetica, sans-serif;
-  /* font-family: "HWT Arabesque W00 Regular";
+  font-family: "HWT Arabesque W00 Regular";
   font-style: normal;
   font-size: 3em;
-  font-weight: 400; */
+  font-weight: 400;
 }
 
 .App-header {
