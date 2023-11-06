@@ -1,8 +1,11 @@
 .welcome {
     padding: 1%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
-.welcomeH1{
+.welcomeH1 {
     font-size: calc(30px + 5vmin);
     margin: 1px;
     font-family: Arial, Helvetica, sans-serif;
@@ -10,26 +13,39 @@
     color: black;
 }
 
-.welcomeH2{
-    font-size: 1.3em;
-    margin: 1px;
-    letter-spacing: 0.01em;
-    line-height: 1.3em;
-    font-weight: 700;
-}
 
-.welcomeH3{
-    font-size: 1.2em;
-    margin: 1px;
-    letter-spacing: 0.01em;
-    line-height: 1.3em;
-}
-
-.welcomeH4{
-    font-size: 1em;
-    margin: 1px;
+.howToContent {
+    font-size: 1rem;
+    margin-top: 1rem;
     letter-spacing: 0.01em;
     line-height: 1.3em;
     color: black;
 }
 
+
+.howToUseContainer {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    background-color: #e3daff;
+    border: 3px solid #ffffff;
+    padding: 1rem;
+    border-radius: 25px;
+    width: 70vw;
+    margin: auto;
+    margin-bottom: 33px;
+}
+
+.howToUseButton {
+    width: fit-content;
+    margin: auto;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.links {
+    color: #130a2d;
+    margin: 4px 4px 0 4px;
+    border-bottom: 2px solid #ffffff;
+    font-weight: 700;
+}

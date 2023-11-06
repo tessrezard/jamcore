@@ -59,6 +59,7 @@ p {
 }
 
 @media (max-width: 800px) {
+    
     .trackContainer {
         width: 600px;
     }

@@ -1,56 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './Welcome.module.css'
 
 function Welcome() {
 
+    const [moreInfo, setMoreInfo] = useState(false);
+
     return (
-        <div className={styles.welcome}>
-            <p className={styles.welcomeH1}>Hello!</p>
-            <p className={styles.welcomeH1}>Welcome to Jamcore</p><br />
-            <ul className={styles.welcomeH2}>This project utilizes the Spotify web API to :
-                <li> • search for songs </li>
-                <li> • create a playlist </li>
-                <li> • add it to your Spotify account. </li>
-            </ul>
+        <>
+            <div className={styles.welcome}>
+                <p className={styles.welcomeH1}>Hello!</p>
+                <p className={styles.welcomeH1}>Welcome to Jamcore</p><br />
+                <ul className={styles.welcomeH2}>This project uses the Spotify web API to :
+                    <li> • search for songs </li>
+                    <li> • create a playlist </li>
+                    <li> • add it to your Spotify account. </li>
+                </ul>
 
-            <p className={styles.welcomeH3}>
-                Jamcore is currently in development mode.
-                <br />
-                This means it is not accessible to the general public.
-                To use this application and access its features,
-                you need to get in touch with the developer (that’s me!) directly.
-                <br />
-                tessrezard@gmail.com
-                <br />
+                <div className={styles.howToUseContainer}onClick={() => setMoreInfo((prev) => !prev)}>
+                    <div className={styles.howToUseButton} >
+                        Jamcore is in development mode.
+                        <br />
+                        How to use :
+                    </div>
+                    {moreInfo ? (<>
+                        <div>
+                            <p className={styles.howToContent}>
+                                Currently, some of Jamecore's functionalities are not accessible to the general public. <br/>
+                                To use this application and access its features,
+                                you need to get in touch with me directly at tessrezard@gmail.com.
+                                <br />
+                                I can then add you as an authorized user on the Spotify Developer Dashboard,
+                                allowing you to use the application.
+                            </p>
+                            <p className={styles.howToContent}>
+                                If if you would like to see a 
+                                <a href="https://github.com/tessrezard/jamcore#readme" target='_blank' className={styles.links}> 
+                                    video demo
+                                </a>
+                                you can find one on the
+                                <a href="https://github.com/tessrezard/jamcore#readme" target='_blank' className={styles.links}>
+                                    README
+                                </a>
+                                for Jamcore on my github.
+                                <br />
+                                <br />
+                                <a href="https://github.com/tessrezard" target='_blank' className={styles.links}>
+                                    https://github.com/tessrezard 
+                                </a>
+                            </p>
+                            <p className={styles.howToContent}>
+                                If we have you set up already, click log in button above. 
+                                <br/>
+                                The log-in will last an hour, and then you will be logged out automatically. 
+                                <br/>
+                                To log out manually, just click log out.
+                            </p>
+                        </div>
+                    </>) : (<></>)}
 
-                Once you express your interest,
-                I will add you as an authorized user on the Spotify Developer Dashboard,
-                allowing you to use the application.
-            </p>
-            <br />
-
-            <p className={styles.welcomeH3}>
-                If if you would rather watch a  <br />
-                <a href="https://github.com/tessrezard/jamcore#readme" target='_blank'> <u>video demo</u> </a> <br />
-                you can find one on the
-                <a href="https://github.com/tessrezard/jamcore#readme" target='_blank'> <u>README</u> </a>
-                for Jamcore on my github.
-                <br />
-                <br />
-                <a href="https://github.com/tessrezard" target='_blank'> <u>https://github.com/tessrezard</u> </a>
-            </p>
-
-            <br />
-
-            <br />
-            <p className={styles.welcomeH4}>
-                If we have you set up already, you can to log yourself in (click log in button above). <br />
-                The 'log in' will last an hour,
-                and then you will be logged out automatically. <br />
-                If you what to log out before the hour is up, you can click log out.
-            </p>
-
-        </div>
+                </div>
+            </div>
+        </>
     );
 
 }
