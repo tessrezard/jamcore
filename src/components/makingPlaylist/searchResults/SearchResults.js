@@ -2,8 +2,8 @@ import React, { useEffect, useRef }from 'react';
 // import style from './SearchResults.module.css';
 import styles from '../MakingPlaylist.module.css';
 
-import Track from '../trackThings/Track';
-import { generateId } from '../../utilities';
+import Track from '../../track/Track';
+import { generateId } from '../../../utilities';
 
 function SearchResults ({ addTrackToPlaylist, searchResponse }) {
 

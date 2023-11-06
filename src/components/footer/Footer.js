@@ -9,7 +9,7 @@ function Footer () {
                     <h4>All metadata supplied and made available by Spotify.</h4>
 
                 </div>
-                <img src={require('../Spotify_Logo_RGB_Green.png')} className={styles.spotifyLogo}/>
+                <img src={require('../../Spotify_Logo_RGB_Green.png')} className={styles.spotifyLogo}/>
 
             <h4>Click on a track to open it in spotify.</h4>
             </div>

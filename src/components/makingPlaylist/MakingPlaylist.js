@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
-import SearchResults from './searchResultsThings/SearchResults';
-import Playlist from './playlistThings/Playlist';
-import { generateId } from '../utilities';
+import SearchResults from './searchResults/SearchResults';
+import Playlist from './playlist/Playlist';
+import { generateId } from '../../utilities';
 import styles from './MakingPlaylist.module.css';
 
 function MakingPlaylist ({ searchResponse, token}) {

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import playlistStyle from './Playlist.module.css';
 import styles from '../MakingPlaylist.module.css';
 
-import Track from '../trackThings/Track';
-import { generateId } from '../../utilities';
+import Track from '../../track/Track';
+import { generateId } from '../../../utilities';
 import axios from 'axios';
 
 
