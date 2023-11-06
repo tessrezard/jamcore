@@ -33,26 +33,27 @@
 
 }
 
-h3, h4, h5, p {
+p {
     margin: 2px;
 }
 
-h3 {
-    font-size: 1em;
+.name {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-h4 {
-    font-size: 1em;
+.artists {
+    font-size: 1rem;
     color: rgb(121, 119, 140)
 }
 
-h5 {
-    font-size: 0.75em;
+.duration {
+    font-size: 1rem;
     color: rgb(141, 136, 187)
 }
 
-p {
-    font-size: 0.75em;
+.explicit {
+    font-size: 0.75rem;
     color: rgb(136, 128, 211)
 
 }

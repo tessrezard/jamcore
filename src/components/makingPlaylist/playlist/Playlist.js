@@ -98,7 +98,6 @@ function Playlist({ tracklist, setTracklist, removeTrackfromPlaylist, token, }) 
                             <button className={styles.trackBtn} onClick={() => handleRemoveTrack(track)}> 
                                 <div className={styles.btn}>-</div> 
                             </button>
-
                         </li >
                     );
                 })

@@ -9,13 +9,14 @@ function MakingPlaylist ({ searchResponse, token}) {
 
     const addTrackToPlaylist = (track) => {
         const newTrack = { ...track, uniqueId: generateId() };
-        setTracklist([...tracklist, newTrack]);
+        setTracklist(prev => [...prev, newTrack]);
       };
 
     const removeTrackfromPlaylist = (track) => {
-      setTracklist(tracklist.filter(trackToRemove =>
-        track.uniqueId !== trackToRemove.uniqueId
-      ))
+      setTracklist(prev => 
+          prev.filter(trackToRemove =>
+          track.uniqueId !== trackToRemove.uniqueId)
+          )
     }
 
 

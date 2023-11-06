@@ -3,7 +3,7 @@
 .appTitle{
     /* text-shadow: 3px 3px 0px rgb(225, 105, 125); */
     color: rgb(0, 0, 0);
-    font-size: calc(20px + 2vmin);
+    font-size: calc(1rem + 2vmin);
   }
 
 h1{
@@ -11,5 +11,4 @@ h1{
   font-style: normal;
   font-weight: 400;
   margin: 1%;
-
 }

@@ -22,15 +22,13 @@ function Track({ name, artists, explicit, duration_ms, image, link }) {
 
     <div onClick={openTrackInSpotify} className={styles.trackContainer}>
       <div>
-        <img src={image} alt='album image' className={styles.img}  />
+        <img src={image} alt={`album cover for ${name}`} className={styles.img}  />
       </div>
       <div className={styles.trackInfo}>
-        <h3>{name}</h3>
-        <h4>{artists}</h4>
-        <h5>{duration}</h5>
-        <p>
-          {explicit ? 'explicit' : ''}
-        </p>
+        <p className={styles.name}> {name} </p>
+        <p className={styles.artists}> {artists} </p>
+        <p className={styles.duration}> {duration} </p>
+        <p className={styles.explicit}> {explicit ? 'explicit' : ''} </p>
       </div >
 
     </div>
