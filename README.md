@@ -1,5 +1,5 @@
 # Jamcore
-[See live site at jamcore.netlify.app](https://jamcore.netlify.app/)/
+See live [Jamcore](https://jamcore.netlify.app/) site at [jamcore.netlify.app](https://jamcore.netlify.app/)\
 This project uses the Spotify web API to search tracks, create a playlist, and add tracks to the playlist.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
