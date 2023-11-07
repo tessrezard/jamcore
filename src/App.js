@@ -30,7 +30,6 @@ function App() {
     window.localStorage.removeItem('token');
     setToken('');
     window.localStorage.removeItem('expirationTime');
-
   }
 
 

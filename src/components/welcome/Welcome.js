@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from './Welcome.module.css'
-
+import styles from './Welcome.module.css';
+import Demo from '../demo/Demo'
 function Welcome() {
 
     const [moreInfo, setMoreInfo] = useState(false);
@@ -33,11 +33,10 @@ function Welcome() {
                                 allowing you to use the application.
                             </p>
                             <p className={styles.howToContent}>
-                                If if you would like to see a 
-                                <a href="https://github.com/tessrezard/jamcore#readme" target='_blank' className={styles.links}> 
-                                    video demo
-                                </a>
-                                you can find one on the
+                                Here is a demo video of the site:  <br/><br/>
+                                <Demo/>
+
+                                Find out more on the
                                 <a href="https://github.com/tessrezard/jamcore#readme" target='_blank' className={styles.links}>
                                     README
                                 </a>
