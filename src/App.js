@@ -30,7 +30,6 @@ function App() {
     window.localStorage.removeItem('token');
     setToken('');
     window.localStorage.removeItem('expirationTime');
-    console.log('LOG OUT');
 
   }
 
@@ -41,7 +40,6 @@ function App() {
     setToken(hashToken);
     window.location.hash = '';
     window.localStorage.setItem('token', hashToken);
-    console.log('!token && hash, token: ', token, 'hash', hash);
   }
 
   // -- SET LOCAL STORAGE TOKEN FROM STATE VARIABLE -- (if not yet set, if local deleted)
@@ -80,10 +78,9 @@ function App() {
       let timeRemainingInMins = 0;
       if (timeRemaining > 0) {
         timeRemainingInMins = timeRemaining / 60000;
-        console.log('timeRemainingInMins', timeRemainingInMins);
+        // console.log('timeRemainingInMins', timeRemainingInMins);
       }
       if (!timeRemaining) {
-        console.log('Out of time!');
         timeRemainingInMins = 0;
         logout();
       }
