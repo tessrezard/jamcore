@@ -34,7 +34,6 @@ function SearchBar ({ token, search, setSearch, setSearchResponse, searchResults
             }
         });
         const responseItems = [response.data[typeKey].items];
-        console.log(`responseItems ${typeOfSearch}` , responseItems);
         const keysToCopy = ['name', 'artists', 'explicit', 'duration_ms', 'id', 'uri', 'album', 'external_urls' ];
         const cleanData = responseItems[0].map(item => {
             const newItem = {}; 
@@ -51,7 +50,6 @@ function SearchBar ({ token, search, setSearch, setSearchResponse, searchResults
                  }
                 
             });
-            console.log(item.external_urls.spotify);
             return newItem;
         })
          setSearchResponse(cleanData);

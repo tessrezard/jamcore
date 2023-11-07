@@ -30,6 +30,8 @@ function App() {
     window.localStorage.removeItem('token');
     setToken('');
     window.localStorage.removeItem('expirationTime');
+    console.log('LOG OUT');
+
   }
 
 
@@ -39,6 +41,7 @@ function App() {
     setToken(hashToken);
     window.location.hash = '';
     window.localStorage.setItem('token', hashToken);
+    console.log('!token && hash, token: ', token, 'hash', hash);
   }
 
   // -- SET LOCAL STORAGE TOKEN FROM STATE VARIABLE -- (if not yet set, if local deleted)
@@ -65,35 +68,31 @@ function App() {
     expirationTime = window.localStorage.getItem('expirationTime');
   }
 
-  // if (expirationTime === 0) {
-  // } else if (expirationTime > 0) {
-  // }
+
 
 
 
   useEffect(() => {
     const checkTokenExpiration = () => {
       const currentTime = Date.now();
-      let timeRemaining = 0;
+      expirationTime = window.localStorage.getItem('expirationTime');
+      let timeRemaining = expirationTime - currentTime;
       let timeRemainingInMins = 0;
-      if (expirationTime - currentTime) {
-        timeRemaining = expirationTime - currentTime;
-      }
       if (timeRemaining > 0) {
         timeRemainingInMins = timeRemaining / 60000;
+        console.log('timeRemainingInMins', timeRemainingInMins);
       }
-      if (timeRemaining < 0) {
+      if (!timeRemaining) {
+        console.log('Out of time!');
         timeRemainingInMins = 0;
-      }
-      if (timeRemaining < 0 || !window.localStorage.getItem('token')) {
         logout();
       }
     }
-    const tokenCheckInterval = setInterval(checkTokenExpiration, 5000);
+    const tokenCheckInterval = setInterval(checkTokenExpiration, 10000);
     return () => {
       clearInterval(tokenCheckInterval);
     };
-  }, [])
+  }, [token])
 
 
   return (
