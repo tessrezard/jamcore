@@ -112,7 +112,7 @@ function App() {
         <img src={require('./Spotify_Icon_RGB_Green.png')} className='spotifyLogo' alt='Spotify logo' />
       </header>
 
-      <main >
+      <main className="App-main">
         {!token ?
           (<>
             <Welcome />

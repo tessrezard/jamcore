@@ -59,13 +59,15 @@ h1{
   position: sticky;
 }
 
+
+
 .App-footer {
-  position: fixed;
+  position: static;
   bottom: 0;
   background-color: #000000;
   overflow-x: visible;
-  width: 100vw;
-  right: 0.001%;
+  /* width: 100vw; */
+  /* right: 0.001%; */
   z-index: 1;
   padding: 10px;
 }

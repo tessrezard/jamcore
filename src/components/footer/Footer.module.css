@@ -5,11 +5,23 @@
     color: #ffffff;
 }
 
+.appFooter p {
+    font-size: 0.75rem;
+}
 .appFooter h4 {
     color: #ffffff;
 }
 
 
 .spotifyLogo{
-    height: 30px;
+    height: 20px;
+  }
+
+  @media (min-width: 600px) {
+    .appFooter p {
+        font-size: 1rem;
+    }
+    .spotifyLogo{
+        height: 30px;
+      }
   }
