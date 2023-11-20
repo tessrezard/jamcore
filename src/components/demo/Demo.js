@@ -1,19 +1,20 @@
 import React, { useState } from "react";
+import styles from './Demo.module.css'
 
 function Demo() {
 
 
     return (
         <>
-            <div >
+            <div className={styles.videoContainer} >
             <iframe 
-                width="560" 
-                height="315" 
+                
                 src="https://www.youtube.com/embed/NjLoCkVbMQU?si=IVVUCgpEUt-wqTPK" 
                 title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
+                allowfullscreen
+                className={styles.video}>
             </iframe>
             </div>
         </>

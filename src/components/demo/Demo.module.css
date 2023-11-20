@@ -1,0 +1,32 @@
+.videoContainer{
+ display: flex;
+ justify-content: center;
+ margin-bottom: 1rem;
+}
+
+.video {
+    width: 200px;
+    
+}
+
+
+@media (min-width: 350px) {
+    .video {
+        width: 280px;
+        height: 170px;
+    }
+}
+
+@media (min-width: 500px) {
+    .video {
+        width: 350px;
+        height: 250px
+    }
+}
+
+@media (min-width: 600px) {
+    .video {
+        width: 560px;
+        height: 315px;
+    }
+}
