@@ -6,7 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Technologies
 React\
 Javascript\
-CSS
+CSS\
+Axios
 
 
 ### Jamcore is in development mode.
